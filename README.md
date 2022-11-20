@@ -1,4 +1,9 @@
-# README
+# Project Portfolio
+## Development
+Start a web server by running the following command:
+```
+bin/rails server -b 0.0.0.0
+```
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
