@@ -4,6 +4,14 @@ Start a web server by running the following command:
 ```
 bin/rails server -b 0.0.0.0
 ```
+Database commands:
+```
+bin/rails db:drop
+bin/rails db:create
+bin/rails db:migrate
+bin/rails db:seed
+
+```
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
