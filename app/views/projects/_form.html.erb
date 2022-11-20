@@ -21,6 +21,25 @@
     <%= form.text_area :description %>
   </div>
 
+  <% if project.thumbnail.attached?%>
+    <%= image_tag project.thumbnail %>
+  <% end %>
+
+  <div>
+    <%= form.label :thumbnail, style: "display: block" %>
+    <%= form.file_field :thumbnail %>
+  </div>
+  
+  <div>
+    <%= form.label :images, multiple: true, style: "display: block" %>
+    <%= form.file_field :images %>
+  </div>
+  
+  <div>
+    <%= form.label :files, multiple: true, style: "display: block" %>
+    <%= form.file_field :files %>
+  </div>
+
   <div>
     <%= form.submit %>
   </div>

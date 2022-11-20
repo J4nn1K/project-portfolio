@@ -1,4 +1,9 @@
 <div id="<%= dom_id project %>">
+  
+  <% if project.thumbnail.attached?%>
+    <%= image_tag project.thumbnail %>
+  <% end %>
+  
   <p>
     <strong>Name:</strong>
     <%= project.name %>
