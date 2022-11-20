@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Projects</h1>
+<h1 class="text-2xl font-bold">Projects</h1>
 
 <div id="projects">
   <% @projects.each do |project| %>
     <%= render project %>
-    <p>
+    <p class="underline">
       <%= link_to "Show this project", project %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New project", new_project_path %>
+<p class="underline"><%= link_to "New project", new_project_path %></p>
