@@ -35,4 +35,4 @@ jobs:
       with:
         file: docker/Dockerfile
         push: true          
-        tags: ghcr.io/${{ env.IMAGE_NAME }}:${{date +%s}}
+        tags: ghcr.io/${{ env.IMAGE_NAME }}:${{ github.run_id }}
