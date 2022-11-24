@@ -35,8 +35,10 @@ jobs:
     
     - name: Build and push
       uses: docker/build-push-action@v3
+      env: 
+        RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
       with:
         push: true
         tags: ghcr.io/${{ env.LOWERCASEREPO }}:${{ github.run_id }}
-        secrets: |
-          RAILS_MASTER_KEY=${{ secrets.RAILS_MASTER_KEY }}
+        # secrets: |
+        #   RAILS_MASTER_KEY=${{ secrets.RAILS_MASTER_KEY }}
