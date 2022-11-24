@@ -11,6 +11,8 @@ env:
 
 jobs:
   docker-build-and-push:
+    env:
+      RAILS_MASTER_KEY . ${{ secrets.RAILS_MASTER_KEY }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
