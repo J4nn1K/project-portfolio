@@ -23,5 +23,15 @@ services:
     depends_on:
       - postgres
 
+  nginx:
+    image: nginx
+    restart: unless-stopped
+    ports: 
+      - "80:80"
+    volumes:
+      - /nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - rails
+
 volumes:
   postgres:
