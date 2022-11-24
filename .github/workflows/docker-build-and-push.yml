@@ -37,7 +37,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: ghcr.io/${{ env.LOWERCASEREPO }}:${{ github.run_id }}
+        tags: ghcr.io/${{ env.LOWERCASEREPO }}
         build-args: |
           RAILS_MASTER_KEY=${{ secrets.RAILS_MASTER_KEY }}
 
