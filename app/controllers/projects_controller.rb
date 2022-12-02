@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+  http_basic_authenticate_with name: Rails.application.credentials[:http_basic_authenticate_name], 
+                               password: Rails.application.credentials[:http_basic_authenticate_password], 
+                               except: :index
   before_action :set_project, only: %i[ show edit update destroy ]
 
   # GET /projects or /projects.json
