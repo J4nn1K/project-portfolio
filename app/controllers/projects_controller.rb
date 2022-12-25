@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   http_basic_authenticate_with name: Rails.application.credentials[:http_basic_authenticate_name], 
                                password: Rails.application.credentials[:http_basic_authenticate_password], 
-                               except: :index
+                               except: [:index, :show]
   before_action :set_project, only: %i[ show edit update destroy ]
 
   # GET /projects or /projects.json
@@ -68,6 +68,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, :description, :year, :category, :thumbnail, :images, :files)
+      params.require(:project).permit(:name, :description, :year, :category, :thumbnail, :images => [], :files => [])
     end
 end
