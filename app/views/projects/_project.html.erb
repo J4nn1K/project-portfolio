@@ -9,7 +9,11 @@
   <div class="my-16 sm:w-full sm:flex sm:flex-row sm:overflow-x-auto sm:pb-4">
 
     <% project.images.each do |image| %>
-      <img src="<%= url_for(image) %>" class="mb-4 rounded-xl shadow-md sm:h-80 sm:mr-4">
+
+      <a href="<%= url_for(image)%>" class="shrink-0">
+        <img src="<%= url_for(image) %>" class="mb-4 rounded-xl shadow-md sm:h-80 sm:mr-4 hover:opacity-75">
+      </a>
+
     <% end %>
 
   </div>
