@@ -28,8 +28,13 @@
 
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.label :description_short, style: "display: block" %>
+    <%= form.text_area :description_short %>
+  </div>
+
+  <div>
+    <%= form.label :description_long, style: "display: block" %>
+    <%= form.text_area :description_long %>
   </div>
 
   <% if project.thumbnail.attached?%>
