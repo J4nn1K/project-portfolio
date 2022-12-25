@@ -1,26 +1,17 @@
-<div id="<%= dom_id project %>">
-  
-  <div class="relative z-10 flex w-full items-center justify-center rounded-xl overflow-hidden shadow-md">
-    <img src="<%= url_for(project.thumbnail) %>"/>
+<div id="<%= dom_id project %>"> 
+  <div class="flex gap-6 text-sm font-medium text-zinc-600 dark:text-zinc-400 mb-6">
+    <a class="transition hover:text-teal-500 dark:hover:text-teal-400" href="<%= projects_path %>">← Projects</a>
   </div>
   
-  <p>
-    <strong>Name:</strong>
-    <%= project.name %>
-  </p>
-
-  <p>
-    <strong>Year:</strong>
-    <%= project.year %>
-  </p>
-
-  <strong>Category:</strong>
-    <%= project.category %>
-  </p>
+  <h1 class="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl"><%= project.name %></h1>
+  <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400"><%= project.description %></p>
   
-  <p>
-    <strong>Description:</strong>
-    <%= project.description %>
-  </p>
+  <div class="my-16 sm:w-full sm:flex sm:flex-row sm:overflow-x-auto sm:pb-4">
+
+    <% project.images.each do |image| %>
+      <img src="<%= url_for(image) %>" class="mb-4 rounded-xl shadow-md sm:h-80 sm:mr-4">
+    <% end %>
+
+  </div>
 
 </div>
