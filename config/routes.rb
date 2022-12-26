@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "projects#index"
+
+  get "/openai" => redirect("https://openai-demo-app-77btoea26q-uc.a.run.app/")
 end
